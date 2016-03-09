@@ -1185,6 +1185,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
       @include breakpoint(medium) {
         width: 100%;
+        padding: 2em 0.5em
       }
     }
 
@@ -1357,8 +1358,11 @@ $baseurl: '{{ site.baseurl }}/images';
       }
 
       p {
+        color: #fff;
         font-size: 0.75em;
+        font-weight: bold;
         text-align: center;
+        padding: 1.5em 4em;
       }
     }
 
