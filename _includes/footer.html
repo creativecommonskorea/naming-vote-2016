@@ -1,19 +1,14 @@
 <!-- Footer -->
 <footer id="footer">
-  <ul class="icons">
-    {% for socloc in site.social %}
-    {% if socloc[1] %}
-    {% if socloc[0] == 'email' %}
-    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-envelope-o"
-           ><span class="label">E-mail</span></a></li>
-    {% else %}
-    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
-           ><span class="label">{{ socloc[0] }}</span></a></li>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-  </ul>
   <ul class="copyright">
-    <li>CCKOREA에 의해 작성된 {{ site.title }} 사이트는 크리에이티브 커먼즈 저작자 표시 2.0 대한민국 라이선스에 따라 이용하실 수 있습니다.</li>
+    <li>
+      <img src="/images/cc.png" alt="">
+    </li>
+    <li>
+      <img src="/images/cc-by.png" alt="">
+    </li>
+    <li>
+      <p>CCKOREA에 의해 작성된 {{ site.title }} 사이트는<br>크리에이티브 커먼즈 저작자 표시 2.0 대한민국 라이선스에 따라 이용하실 수 있습니다.</p>
+    </li>
   </ul>
 </footer>
