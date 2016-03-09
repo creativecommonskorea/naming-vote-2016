@@ -1020,6 +1020,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
         p {
           color: _palette($p, fg-light);
+          margin-bottom: 2em;
         }
 
         &.major {
@@ -1482,7 +1483,7 @@ $baseurl: '{{ site.baseurl }}/images';
     img {
       display: block;
       margin: 0 auto;
-      width: 120px;
+      width: 150px;
 
     }
 
