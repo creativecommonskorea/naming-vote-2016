@@ -9,6 +9,7 @@ $baseurl: '{{ site.baseurl }}/images';
 @import 'libs/mixins';
 @import 'font-awesome.min.css';
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
 
 /*
   Spectral by HTML5 UP
@@ -219,10 +220,12 @@ $baseurl: '{{ site.baseurl }}/images';
 
   header {
     p {
-      color: _palette(fg-light);
+      font-size: 1em;
+      color: #fff;
       position: relative;
       top: -0.25em;
-      text-align: left;
+      text-align: center;
+      line-height: 2em;
 
       @include breakpoint(large) {
         padding-left: 4em;
@@ -256,6 +259,10 @@ $baseurl: '{{ site.baseurl }}/images';
         display: inline-block;
         padding-bottom: 1em;
         position: relative;
+
+        > span.subheader {
+          font-size: 0.75em;
+        }
 
         &:after {
           content: '';
@@ -738,6 +745,7 @@ $baseurl: '{{ site.baseurl }}/images';
     padding: 0;
     width: 100%;
 
+
     li {
       padding: 0.5em;
       display: block;
@@ -758,6 +766,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
         > ul {
           padding: 0em;
+          margin: 0em;
 
           > li {
             width: 100%;
@@ -768,6 +777,17 @@ $baseurl: '{{ site.baseurl }}/images';
               text-decoration-color: _palette(fg);
             }
           }
+        }
+
+        &:before {
+          display: block;
+          position: absolute;
+          color: _palette(accent1, bg);
+          font-size: 0.75em;
+          background-color: _palette(bg-header);
+          left: 0em;
+          top: 0em;
+          padding: 0.2em 0.75em;
         }
       }
 
@@ -787,10 +807,34 @@ $baseurl: '{{ site.baseurl }}/images';
 
       &:nth-child(1) {
         border-top-left-radius: 3px;
+
+        > div {
+          &:before {
+            content: "후보 1"
+          }
+        }
       }
 
       &:nth-child(2) {
         border-top-right-radius: 3px;
+
+
+        > div {
+          &:before {
+            content: "후보 2"
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        border-top-right-radius: 3px;
+
+
+        > div {
+          &:before {
+            content: "후보 3"
+          }
+        }
       }
 
       &:nth-last-child(1) {
@@ -804,9 +848,17 @@ $baseurl: '{{ site.baseurl }}/images';
           -ms-flex-align: center;
           align-items: center;
           justify-items: center;
+          background-image: url('/images/question.png');
+          background-size: 80px 160px;
+          background-repeat: no-repeat;
+          background-position: center;
 
           > p {
             width: 100%;
+          }
+
+          &:before {
+            content: "기타";
           }
         }
       }
@@ -1260,13 +1312,28 @@ $baseurl: '{{ site.baseurl }}/images';
   #header {
     @include vendor('transition', 'background-color #{_duration(transitions)} ease');
     background: _palette(bg-header);
-    height: 3em;
+    height: 6em;
     left: 0;
     line-height: 3em;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: _misc(z-index-base);
+    display: flex;
+    justify-content: center;
+
+
+    > .inner {
+      width: 60em;
+
+      @include breakpoint(large) {
+        width: 70%;
+      }
+
+      @include breakpoint(medium) {
+        width: 100%;
+      }
+    }
 
     h1 {
       @include vendor('transition', 'opacity #{_duration(transitions)} ease');
@@ -1367,7 +1434,7 @@ $baseurl: '{{ site.baseurl }}/images';
     @include vendor('flex-direction', 'column');
     @include vendor('justify-content', 'center');
     cursor: default;
-    height: 80vh;
+    height: 100vh;
     min-height: 25em;
     overflow: hidden;
     position: relative;
