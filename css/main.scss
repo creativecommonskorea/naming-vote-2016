@@ -1473,14 +1473,12 @@ $baseurl: '{{ site.baseurl }}/images';
     @include vendor('flex-direction', 'column');
     @include vendor('justify-content', 'center');
     cursor: default;
-    height: 70vh;
-    min-height: 5em;
+    min-height: 35em;
     overflow: hidden;
     position: relative;
     text-align: center;
     background-color: _palette(bg);
     margin-top: 4em;
-    padding-bottom: 1em;
 
     img {
       display: block;
