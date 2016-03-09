@@ -286,12 +286,6 @@ $baseurl: '{{ site.baseurl }}/images';
         margin: 0 0 _size(element-margin) 0;
       }
     }
-
-    @include breakpoint(medium) {
-      br {
-        display: none;
-      }
-    }
   }
 
 /* Box */
@@ -953,10 +947,6 @@ $baseurl: '{{ site.baseurl }}/images';
     @include breakpoint(medium) {
       display: block;
 
-      br {
-        display: none;
-      }
-
       .image {
         width: 100%;
       }
@@ -1017,9 +1007,11 @@ $baseurl: '{{ site.baseurl }}/images';
           margin: 2em 0em;
 
           > span.subheader {
-            font-size: 0.65em;
+            font-size: 0.75em;
           }
         }
+
+
 
         p {
           font-family: "Nanum Myeongjo";
@@ -1364,24 +1356,36 @@ $baseurl: '{{ site.baseurl }}/images';
         text-align: center;
         padding: 1.5em 4em;
       }
-    }
 
-    h1 {
-      @include vendor('transition', 'opacity #{_duration(transitions)} ease');
-      height: inherit;
-      line-height: inherit;
-      position: absolute;
-      top: 1.25em;
-      margin-left: 1em;
-
-      a {
-        border: 0;
-        display: block;
+      h1 {
+        @include vendor('transition', 'opacity #{_duration(transitions)} ease');
         height: inherit;
         line-height: inherit;
+        position: absolute;
+        top: 1.25em;
+        margin-left: 1em;
 
         @include breakpoint(small) {
-          font-size: 0.8em;
+          position: relative;
+        }
+
+        a {
+          border: 0;
+          display: block;
+          height: inherit;
+          line-height: inherit;
+
+          @include breakpoint(small) {
+            @include vendor('display', 'flex');
+            @include vendor('flex-direction', 'column');
+            @include vendor('justify-content', 'center');
+            font-size: 0.8em;
+            position: relative;
+
+            > img {
+              margin: 0 auto;
+            }
+          }
         }
       }
     }
@@ -1583,10 +1587,6 @@ $baseurl: '{{ site.baseurl }}/images';
 
       h2 {
         font-size: 1.25em;
-      }
-
-      br {
-        display: none;
       }
 
       .more {
@@ -1814,9 +1814,29 @@ $baseurl: '{{ site.baseurl }}/images';
     #footer {
       background-color: darken(transparentize(_palette(bg-header), 0.1), 8);
     }
+
+    .visible-mobile {
+      display: none;
+    }
   }
 
   body.is-mobile {
+    .wrapper.style1 header h2 {
+      font-size: 1.5em;
+
+      > span.subheader {
+        font-size: 0.75em;
+      }
+    }
+
+    .visible-mobile {
+      display: block;
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+
     &.landing {
       #page-wrapper {
         background: none;
@@ -1829,7 +1849,10 @@ $baseurl: '{{ site.baseurl }}/images';
       }
     }
 
-
+    #banner {
+      margin-top: 1.2em;
+      padding-bottom: 1.2em;
+    }
   }
 
 /* Customized Elements */
@@ -1854,5 +1877,9 @@ $baseurl: '{{ site.baseurl }}/images';
     color: _palette(fg-bold);
     font-size: 1.75em;
     text-align: center;
+  }
+
+  .pds-answer-group {
+    @include vendor("display", "flex");
   }
 }
