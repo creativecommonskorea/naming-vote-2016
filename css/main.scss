@@ -751,7 +751,7 @@ $baseurl: '{{ site.baseurl }}/images';
       display: block;
       position: relative;
       text-align: center;
-      width: 25%;
+      width: 33%;
 
       > div {
         min-height: 26em;
@@ -827,7 +827,6 @@ $baseurl: '{{ site.baseurl }}/images';
       &:nth-child(2) {
         border-top-right-radius: 3px;
 
-
         > div {
           &:before {
             content: "후보 2"
@@ -838,10 +837,29 @@ $baseurl: '{{ site.baseurl }}/images';
       &:nth-child(3) {
         border-top-right-radius: 3px;
 
-
         > div {
           &:before {
             content: "후보 3"
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        border-top-right-radius: 3px;
+
+        > div {
+          &:before {
+            content: "후보 4"
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        border-top-right-radius: 3px;
+
+        > div {
+          &:before {
+            content: "후보 5"
           }
         }
       }
