@@ -10,10 +10,10 @@
   <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/css/ie9.css" | prepend: site.baseurl }}" /><![endif]-->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
-  <meta property="og:url"                content="http://vote.cckorea.org" />
+  <meta property="og:url" content="{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}" />
   <meta property="og:type"               content="website" />
-  <meta property="og:title"              content="CC Korea 단체명 투표" />
-  <meta property="og:description"        content="CC KOREA의 새로운 이름을 제안해주세요" />
-  <meta property="og:image"              content="{{ "/images/thumbnail.png" | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:title"              content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:description"        content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:image"              content="{% if page.thumbnail %}{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}{% else %}{{ "/images/thumbnail.png" | prepend: site.baseurl | prepend: site.url }}{% endif %}">
 
 </head>
