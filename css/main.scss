@@ -932,7 +932,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
     li {
       padding: 0.5em;
-      margin-bottom: 15px;
+      margin-bottom: 45px;
       display: block;
       position: relative;
       width: 50%;
@@ -1327,7 +1327,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
   }
 
-  .wrapper {
+  #vote-naming .wrapper {
     @include padding(2em, 0);
 
     > .inner {
@@ -1380,8 +1380,60 @@ $baseurl: '{{ site.baseurl }}/images';
   }
 
   #vote-ci .wrapper {
+    @include padding(2em, 0);
+
+    > .inner {
+      width: 60em;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 2em;
+
+      @include breakpoint(large) {
+        width: 70%;
+      }
+
+      @include breakpoint(medium) {
+        width: 100%;
+        padding: 0.5em 0.5em
+      }
+    }
+
+    &.alt {
+      padding: 0;
+    }
+
     &.style1 {
       @include wrapper(accent1-ci);
+
+      header {
+        h2 {
+          margin: 1em 0 2em;
+        }
+      }
+    }
+
+    &.style2 {
+      background-color: _palette(bg);
+    }
+
+    &.style3 {
+      @include wrapper(accent5);
+    }
+
+    &.style4 {
+      background-color: transparent;
+    }
+
+    &.style5 {
+      @include wrapper(accent7);
+    }
+
+    @include breakpoint(medium) {
+      @include padding(1em, 3em);
+    }
+
+    @include breakpoint(small) {
+      @include padding(3em, 2em);
     }
   }
 
