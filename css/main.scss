@@ -2111,7 +2111,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 
     .pds-question-top {
-      color: _palette(fg-bold-ci);
+      color: _palette(fg-bold-ci) !important;
       font-size: 1.75em;
       text-align: left;
     }
